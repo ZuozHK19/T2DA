@@ -44,7 +44,10 @@ def main():
         spamwriter.writerow([place[f] for f in fields])
         rowcount = rowcount + 1
 
-    print("Wrote %d rows. Have a nice day!" % rowcount, file=sys.stderr)
+    if rowcount is 0:
+        print("Uh-oh! Nothing to write home about.", file=sys.stderr)
+    else:
+        print("Wrote %d rows. Have a nice day!" % rowcount, file=sys.stderr)
 
 def get_place(row):
     # Conversions
@@ -58,7 +61,7 @@ def get_place(row):
 
     category, is_risky, is_verified = evaluate_domain(domain)
 
-    place = {
+    return {
         "domain": domain,
         "title": row['title'] or '',
         "timestamp": row['last_visit_date'] or '',
