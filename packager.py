@@ -3,17 +3,21 @@ from datetime import datetime
 from datapackage import Package
 from urllib.parse import urlparse
 
+spamwriter = csv.writer(sys.stdout)
+
 package = Package('datapackage/datapackage.json', base_path='datapackage')
-# print("Loaded Data Package %s v%s" % (package.descriptor['name'], package.descriptor['version']))
+print("Loaded Data Package %s v%s" % (package.descriptor['name'], package.descriptor['version']), file=sys.stderr)
 schema = package.descriptor['resources'][0]['schema']
 fields = [f['name'] for f in schema['fields']]
-print(",".join(fields))
 
 reader = csv.reader(sys.stdin)
 headers = next(reader, None)
 col = []
 for h in headers: col.append(h)
-# print("Header: %r" % (col))
+
+print("Input: %r" % (col), file=sys.stderr)
+print("Output: %r" % (fields), file=sys.stderr)
+spamwriter.writerow(fields)
 
 rowcount = 0
 for r in reader:
@@ -45,7 +49,7 @@ for r in reader:
         "is_verified": str(is_verified),
     }
 
-    output = ",".join(["%r"%place[f] for f in fields])
-    print(output)
-
+    spamwriter.writerow([place[f] for f in fields])
     rowcount = rowcount + 1
+
+print("Wrote %d rows. Have a nice day!" % rowcount, file=sys.stderr)
