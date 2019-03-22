@@ -1,0 +1,86 @@
+{
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "places_100",
+      "path": "data/places_100.csv",
+      "profile": "tabular-data-resource",
+      "description": "Sample file of 100 places visited on the web",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "domain",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "integer",
+            "description": "A UNIX timestamp"
+          },
+          {
+            "name": "datetime",
+            "type": "datetime",
+            "format": "default",
+            "description": "An ISO8601 format string e.g. YYYY-MM-DDThh:mm:ssZ in UTC time"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "description": "A standard (e.g. from META) description of the visited resource"
+          },
+          {
+            "name": "image_url",
+            "type": "string",
+            "description": "Link to an image file which previews or thumbnails this resource"
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Category of this resource, if known, e.g. entertainment"
+          },
+          {
+            "name": "is_risky",
+            "type": "boolean",
+            "description": "True if this has been matched to a blacklist of risky sites"
+          },
+          {
+            "name": "is_verified",
+            "type": "boolean",
+            "description": "True if this resource has been matched to a whitelist of verified sites"
+          }
+        ],
+        "missingValues": []
+      }
+    }
+  ],
+  "keywords": [
+    "history",
+    "data literacy",
+    "online behavior"
+  ],
+  "name": "t2da",
+  "title": "Tracks to Digital Awareness",
+  "description": "Container for anonymized representations of tracks taken through users through digital services, initially web browser histories, developed for an open data hackday.",
+  "homepage": "https://github.com/ZuozHK19/datalit",
+  "version": "1.0.0",
+  "contributors": [
+    {
+      "title": "O.Lavrovsky",
+      "role": "author"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+}
