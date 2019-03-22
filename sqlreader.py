@@ -26,9 +26,9 @@ def get_path_windows():
 
 def get_path():
     if (test_mode):
-        return "./";
+        return "private/";
     else:
-        if (platform.system() == "Windows"): 
+        if (platform.system() == "Windows"):
             data_path = get_path_windows()
         elif (platform.system() == "Linux"):
             data_path = get_path_linux()
