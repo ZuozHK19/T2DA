@@ -1,6 +1,6 @@
-# datalit
+# Tracks to Digital Awareness
 
-A work in progress. You should probably go read the Wiki, or something, until we update this.
+A work in progress. You should probably go read the Wiki, or something, until we make this better.
 
 1. Install all the libs:
 
@@ -13,7 +13,7 @@ A work in progress. You should probably go read the Wiki, or something, until we
 3. Now pipe the resulting extracted content into our data packager, and save the resulting output, like this:
 
 ```
-cat private/websites.csv | python packager.py > datapackage/data/places_100.csv
+cat private/websites.csv | python packager.py datapackage > datapackage/data/places_100.csv
 ```
 
 4. ???
