@@ -10,7 +10,6 @@ def get_path_linux():
     data_path = os.path.expanduser('~')+"/.mozilla/firefox"
     for file in os.listdir(data_path):
         if fnmatch.fnmatch( file, '*.default'):
-            print("jup")
             data_path += "/" + file
             break
     return data_path
