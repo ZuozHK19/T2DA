@@ -17,7 +17,7 @@ class Handler:
 
     def open_Report(self, button):
         print('Opening report')
-        webbrowser.open_new("./report/t2da.html")
+        webbrowser.open_new("./datapackage/report/t2da.html")
 
     def dialog_ok(self, button):
         dialog.destroy()
