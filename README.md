@@ -1,29 +1,36 @@
 # Tracks to Digital Awareness
 
-A work in progress. You should probably go read the Wiki, or something, until we make this better.
+A work in progress. More details can be found [in the wiki](https://github.com/ZuozHK19/T2DA/wiki/Project-Idea)
 
-0. Get some lists of URLs/domains (in plain text form, one domain per line) and put them into *sites/good* and *sites/ugly* folders. We have some examples there to get you started. Here are some additional locations:
+## Instructions
 
-- http://www.phishtank.com/developer_info.php
-- http://s3-us-west-1.amazonaws.com/umbrella-static/index.html
-- https://filterlists.com/ (e.g. [uBlockFiltersPlus.txt](https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/uBlockFiltersPlus.txt))
-- https://github.com/fake-news-detector/api/issues/10
-- https://opendata.rapid7.com/sonar.fdns_v2/
-
-1. Install all the libs:
+1) Install all the libs:
 
 `pip install -Ur requirements.txt`
 
-2. Put a copy of your cached database in the `private` folder, or comment out the `test_mode = True` line then run:
+2) Close your browser and run our graphical client:
+
+`python GUI.py`
+
+3) Push the button.
+
+## Console instructions
+
+You can also use our tool on the command line:
+
+1) Close your browser, then run:
 
 `python sqlreader.py`
 
-3. Now pipe the resulting extracted content into our data packager, and save the resulting output, like this:
+Optionally put a copy of your cached SQLite database in the `private` folder if you want to keep your browser running.
+
+2) Now pipe the resulting extracted content into our data packager, and save the resulting output, like this:
 
 ```
 cat private/websites.csv | python packager.py datapackage > datapackage/data/places_100.csv
 ```
+3) Look at the contents of the `datapackage` folder for the resulting (anonymized) data and report.
 
-4. ???
+4) ???
 
-5. Profit!!!
+5) Profit!!!
