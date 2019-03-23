@@ -51,7 +51,7 @@ def read_places_sqlite_and_create_csv():
     select_statement = "select moz_places.url, moz_places.visit_count from moz_places;"
     cur.execute(select_statement)
     results = cur.fetchall()
-    out = open("websites.csv", "w")
+    out = open(os.path.join("private", "websites.csv"), "w")
     for url, count in results:
         out.write(url + "\t" + str(count) + "\n")
 
