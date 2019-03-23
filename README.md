@@ -10,7 +10,7 @@ A work in progress. More details can be found [in the wiki](https://github.com/Z
 
 2) Close your browser and run our graphical client:
 
-`python GUI.py`
+`python3 GUI.py`
 
 3) Push the button.
 
