@@ -7,7 +7,6 @@
     <meta name="author" content="#OpenEduZuoz">
     <meta name="generator" content="Tracks to Digital Awareness">
     <title>T2DA · Report</title>
-    <span data="daterange.from"></span>
 
     <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -51,6 +50,9 @@ bg-white border-bottom shadow-sm">
         <h4 class="my-0 font-weight-normal">Timeline</h4>
       </div>
       <div class="card-body">
+        <h1 class="card-title report-card-title">
+					<span data="count.total"></span>
+					<small class="text-muted">total</small></h1>
         <h5 class="card-title"><small class="text-muted">
           <span data="daterange.from"></span> to
           <span data="daterange.to"></span>
@@ -66,12 +68,10 @@ bg-white border-bottom shadow-sm">
         <h4 class="my-0 font-weight-normal">Risks</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">254 <small class="text-muted">visits</small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>bad-website.com</li>
-          <li>very-evil-fake-news.oo</li>
-          <li>xxx-yyy-zzz-qqq</li>
-          <li>make-the-internet-great-again.eu</li>
+        <h1 class="card-title report-card-title">
+					<span data="count.risky"></span>
+					<small class="text-muted">visits</small></h1>
+        <ul class="list-unstyled mt-3 mb-4" data-list="risky">
         </ul>
         <a href="https://blog.mozilla.org/internetcitizen/2017/11/08/data-detox/?utm_source=www.mozilla.org&utm_medium=referral&utm_campaign=ih-content-hub" target="_blank" class="btn btn-sm btn-block btn-warning">Get help</a>
       </div>
@@ -81,12 +81,10 @@ bg-white border-bottom shadow-sm">
         <h4 class="my-0 font-weight-normal">Verified</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">1024 <small class="text-muted">visits</small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>facebook.com</li>
-          <li>instagram.com</li>
-          <li>helloworld.com</li>
-          <li>opendata.ch</li>
+        <h1 class="card-title report-card-title">
+					<span data="count.verified"></span>
+					<small class="text-muted">visits</small></h1>
+        <ul class="list-unstyled mt-3 mb-4" data-list="verified">
         </ul>
         <a href="https://twitter.com/intent/tweet?text=My%20Digital%20Awareness%20Score:%205120&hashtags=t2da&url=https://digitallearninglab.ch/project/60" type="button" class="btn btn-sm btn-block btn-primary">Share this</a>
       </div>
