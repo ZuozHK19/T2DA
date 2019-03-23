@@ -42,7 +42,9 @@ class Handler:
         with open(BASE_PATH + "/report/data/summary.json", 'w') as outfile:
             json.dump(summary, outfile)
 
-        # stats = generate_stats(places)
+        stats = generate_stats(places)
+        with open(BASE_PATH + "/report/data/stats.json", 'w') as outfile:
+            json.dump(stats, outfile)
 
 
 

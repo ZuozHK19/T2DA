@@ -3,7 +3,6 @@ from datetime import datetime
 from datapackage import Package
 from urllib.parse import urlparse
 
-
 santaslist = {}
 def get_lists_in_dir(subfolder):
     data = {}
@@ -85,6 +84,11 @@ def get_places(reader, col):
         places.append(place)
     return places
 
+def get_date_from_stamp(ds):
+    return datetime.utcfromtimestamp(
+        int(ds)/1000000
+    )
+
 def get_place(row):
     # Conversions
     domain = urlparse(row['url']).hostname
@@ -92,8 +96,8 @@ def get_place(row):
     domain = domain.lower()
     datetimeiso8601 = ''
     if row['last_visit_date']:
-        datetimeiso8601 = datetime.utcfromtimestamp(
-            int(row['last_visit_date'])/1000000
+        datetimeiso8601 = get_date_from_stamp(
+            row['last_visit_date']
         ).isoformat()
 
     category, is_risky, is_verified = evaluate_domain(domain)
@@ -148,6 +152,20 @@ def generate_summary(places):
       "risky":    [p['domain'] for p in places if p['is_risky']],
       "verified": [p['domain'] for p in places if p['is_verified']][0:10]
     }
+
+def generate_stats(places):
+    stats = []
+    for p in places:
+        p_type = 0
+        if p['is_verified']: p_type = 1
+        if not p['timestamp']: continue
+        p_date = get_date_from_stamp(p['timestamp'])
+        stats.append({
+            'month': p_date.month,
+            'hits': 1,
+            'type': p_type
+        })
+    return stats
 
 if __name__ == "__main__":
     main()

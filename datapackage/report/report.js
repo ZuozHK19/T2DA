@@ -1,8 +1,8 @@
-var width = $('#vis').parent().width() - 50;
+var width = $('#vis').parent().width()/16;
 var reportSpec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v2.0.json',
     description: 'A Digital Awareness visualization.',
-    height: 300, width: 80,
+    height: 300, width: width,
     // width: width,
     // autosize: {
     //   type: "fit",
@@ -11,12 +11,16 @@ var reportSpec = {
     // },
     data: { url: 'data/stats.json' },
     transform: [
-      { calculate: "datum.type == 1 ? 'Risky' : 'Verified'", "as": "class" }
+      { calculate: "datum.type == 1 ? 'Risky' : 'Verified'", "as": "class" },
+      { calculate: "monthAbbrevFormat(datum.month - 1)", "as": "date" }
     ],
     spacing: 0,
     mark: 'bar',
     encoding: {
-      column: {field: 'date', type: 'ordinal'},
+      column: {
+        field: 'month',
+        type: 'ordinal'
+      },
       x: {
         field: 'class',
         type: 'nominal',
