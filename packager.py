@@ -32,13 +32,14 @@ def main():
         exit()
     BASE_PATH = sys.argv[1]
     reader = csv.reader(sys.stdin)
-    spamwriter = csv.writer(sys.stdout)
-    package, fields, col = process(BASE_PATH, reader, spamwriter)
+    package, fields, col = process(BASE_PATH, reader)
     load_lists()
     places = get_places(reader, col)
+    
+    spamwriter = csv.writer(sys.stdout)
     save_output(spamwriter, fields, places)
 
-def process(BASE_PATH, reader, spamwriter):
+def process(BASE_PATH, reader):
     # Schema reader
     package = Package(
         os.path.join(BASE_PATH, 'datapackage.json'),
