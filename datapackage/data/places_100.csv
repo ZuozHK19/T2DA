@@ -1,98 +1,98 @@
 domain,title,timestamp,datetime,description,image_url,category,is_risky,is_verified
-docs.fedoraproject.org,,,,,,,True,False
-fedoraproject.org,,,,,,,True,False
-ask.fedoraproject.org,,,,,,,True,False
-fedoramagazine.org,,,,,,,True,False
-planet.fedoraproject.org,,,,,,,True,False
-communityblog.fedoraproject.org,,,,,,,True,False
-forums.fedoraforum.org,,,,,,,True,False
-fedoraproject.org,,,,,,,True,False
-docs.fedoraproject.org,,,,,,,True,False
-www.redhat.com,,,,,,,True,False
-www.jboss.org,,,,,,,True,False
-opensource.com,,,,,,,True,False
-www.theopensourceway.org,,,,,,,True,False
-www.wikipedia.org,Wikipedia,1516951627403670,2018-01-26T07:27:07.403670,"Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation.",,,True,False
-librivox.org,,,,,,,True,False
-www.openclipart.org,,,,,,,True,False
-www.freesound.org,,,,,,,True,False
-creativecommons.org,"When we share, everyone wins - Creative Commons",1517142763157015,2018-01-28T12:32:43.157015,"Creative Commons Global Summit The call for proposals is now open for the 2018 Creative Commons Global Summit in Toronto, CA from April 13-15, 2018. Don’t miss out! Join 500 open advocates from around the world for a weekend of celebration, creativity, and community. Learn more",https://d15omoko64skxi.cloudfront.net/wp-content/uploads/2017/06/cc.large_.open_.graph_.png,,True,False
-blog.soda.camp,,1513008696904431,2017-12-11T16:11:36.904431,,,,True,False
-blog.datalets.ch,define:soda,1551686247231302,2019-03-04T07:57:27.231302,Studies in all things correlated,,,True,False
-google.com,,1513067899254829,2017-12-12T08:38:19.254829,,,,True,False
-pwlan.post.ch,Authentication,1513067744922950,2017-12-12T08:35:44.922950,,,,True,False
-pwlan.post.ch,Enabling network access,1513067755403035,2017-12-12T08:35:55.403035,,,,True,False
-www.google.com,,1530604948886394,2018-07-03T08:02:28.886394,,,,True,False
-www.google.ch,,1513067899360034,2017-12-12T08:38:19.360034,,,,True,False
-www.google.ch,Google,1513067899839876,2017-12-12T08:38:19.839876,,,,True,False
-41eaf957-bac2-4689-92ca-310dde10400d,Google Authenticator Multifactor Authentication,1550563585312729,2019-02-19T08:06:25.312729,,,,True,False
+docs.fedoraproject.org,,,,,,open,False,True
+fedoraproject.org,,,,,,open,False,True
+ask.fedoraproject.org,,,,,,open,False,True
+fedoramagazine.org,,,,,,top-1m,False,True
+planet.fedoraproject.org,,,,,,open,False,True
+communityblog.fedoraproject.org,,,,,,open,False,True
+forums.fedoraforum.org,,,,,,top-1m,False,True
+fedoraproject.org,,,,,,open,False,True
+docs.fedoraproject.org,,,,,,open,False,True
+www.redhat.com,,,,,,top-1m,False,True
+www.jboss.org,,,,,,top-1m,False,True
+opensource.com,,,,,,open,False,True
+www.theopensourceway.org,,,,,,top-1m,False,True
+www.wikipedia.org,Wikipedia,1516951627403670,2018-01-26T07:27:07.403670,"Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation.",,open,False,True
+librivox.org,,,,,,top-1m,False,True
+www.openclipart.org,,,,,,top-1m,False,True
+www.freesound.org,,,,,,open,False,True
+creativecommons.org,"When we share, everyone wins - Creative Commons",1517142763157015,2018-01-28T12:32:43.157015,"Creative Commons Global Summit The call for proposals is now open for the 2018 Creative Commons Global Summit in Toronto, CA from April 13-15, 2018. Don’t miss out! Join 500 open advocates from around the world for a weekend of celebration, creativity, and community. Learn more",https://d15omoko64skxi.cloudfront.net/wp-content/uploads/2017/06/cc.large_.open_.graph_.png,open,False,True
+blog.soda.camp,,1513008696904431,2017-12-11T16:11:36.904431,,,top-1m,False,True
+blog.datalets.ch,define:soda,1551686247231302,2019-03-04T07:57:27.231302,Studies in all things correlated,,top-1m,False,True
+google.com,,1513067899254829,2017-12-12T08:38:19.254829,,,top-1m,False,True
+pwlan.post.ch,Authentication,1513067744922950,2017-12-12T08:35:44.922950,,,top-1m,False,True
+pwlan.post.ch,Enabling network access,1513067755403035,2017-12-12T08:35:55.403035,,,top-1m,False,True
+www.google.com,,1530604948886394,2018-07-03T08:02:28.886394,,,top-1m,False,True
+www.google.ch,,1513067899360034,2017-12-12T08:38:19.360034,,,top-1m,False,True
+www.google.ch,Google,1513067899839876,2017-12-12T08:38:19.839876,,,top-1m,False,True
+41eaf957-bac2-4689-92ca-310dde10400d,Google Authenticator Multifactor Authentication,1550563585312729,2019-02-19T08:06:25.312729,,,top-1m,False,True
 slideslive.com,Daniel Osterwalder | Artistic Intelligence: Kompetenz der Zukunft für agil-innovative Führungskräfte · SlidesLive,1513150766485411,2017-12-13T07:39:26.485411,"Daniel Osterwalder
 CEO & Gründer
-Osterwalder & Stadler...",https://d2ygwrecguqg66.cloudfront.net/data/presentations/38904011/slideslive_daniel-osterwalder_artistic-intelligence-kompetenz-der-zukunft-fur-agilinnovative-fuhrungskrafte.jpg?1511998044,,True,False
-blog.datalets.ch,035 #E-0010 first 1010 months,1513151058740888,2017-12-13T07:44:18.740888,"Looking back at the first year of E-0010, the underground digital co-creation space at the heart of Bern.",http://blog.datalets.ch/content/images/2017/12/raum-ug_00003.jpg,,True,False
-open.spotify.com,,1539758927945873,2018-10-17T06:48:47.945873,,,,True,False
-open.spotify.com,Spotify Web Player,1553112633447782,2019-03-20T20:10:33.447782,,,,True,False
-open.spotify.com,Spotify Web Player,1553112633858961,2019-03-20T20:10:33.858961,,,,True,False
-accounts.spotify.com,Spotify,1513152947653589,2017-12-13T08:15:47.653589,,,,True,False
-accounts.spotify.com,Spotify,1513152947888327,2017-12-13T08:15:47.888327,,,,True,False
-accounts.spotify.com,Login - Spotify,1513152947935724,2017-12-13T08:15:47.935724,,,,True,False
-open.spotify.com,Browse - Featured,1553112646504752,2019-03-20T20:10:46.504752,,,,True,False
-twitter.com,"Open Data Kanton ZH on Twitter: ""Gleich geht es los: Medienkonferenz des @GISZentrumZH «Open Government Data: Kantonale Geodaten kostenlos und ohne Einschränkung verfügbar»… https://t.co/0FAt94gc3o""",1513154779582308,2017-12-13T08:46:19.582308,“Gleich geht es los: Medienkonferenz des @GISZentrumZH «Open Government Data: Kantonale Geodaten kostenlos und ohne Einschränkung verfügbar» Livestream unter https://t.co/ySjsKtBGXv  #ogd #geodaten”,https://pbs.twimg.com/profile_images/420188952151076864/CdfisCTh_400x400.png,,True,False
-blog.datalets.ch,,1513154818979384,2017-12-13T08:46:58.979384,,,,True,False
-blog.datalets.ch,Ghost Admin,1551686244871196,2019-03-04T07:57:24.871196,,,,True,False
-blog.datalets.ch,Sign In - define:soda,1551686258071905,2019-03-04T07:57:38.071905,,,,True,False
-id.atlassian.com,,1513155391573794,2017-12-13T08:56:31.573794,,,,True,False
-id.atlassian.com,,1513155391706280,2017-12-13T08:56:31.706280,,,,True,False
-id.atlassian.com,Log in to continue - Log in with Atlassian account,1513155391851239,2017-12-13T08:56:31.851239,"Log in to Jira, Confluence, and all other Atlassian Cloud products here. Not an Atlassian user? Sign up for free.",,,True,False
-id.atlassian.com,Log in to continue - Log in with Atlassian account,1513155395401225,2017-12-13T08:56:35.401225,,,,True,False
-id.atlassian.com,,1513155398812753,2017-12-13T08:56:38.812753,,,,True,False
-id.atlassian.com,Account settings - Atlassian account,1513155546971122,2017-12-13T08:59:06.971122,,,,True,False
-id.atlassian.com,Account settings - Atlassian account,1513155410013825,2017-12-13T08:56:50.013825,,,,True,False
-id.atlassian.com,Account settings - Atlassian account,1513155413185434,2017-12-13T08:56:53.185434,,,,True,False
+Osterwalder & Stadler...",https://d2ygwrecguqg66.cloudfront.net/data/presentations/38904011/slideslive_daniel-osterwalder_artistic-intelligence-kompetenz-der-zukunft-fur-agilinnovative-fuhrungskrafte.jpg?1511998044,top-1m,False,True
+blog.datalets.ch,035 #E-0010 first 1010 months,1513151058740888,2017-12-13T07:44:18.740888,"Looking back at the first year of E-0010, the underground digital co-creation space at the heart of Bern.",http://blog.datalets.ch/content/images/2017/12/raum-ug_00003.jpg,top-1m,False,True
+open.spotify.com,,1539758927945873,2018-10-17T06:48:47.945873,,,top-1m,False,True
+open.spotify.com,Spotify Web Player,1553112633447782,2019-03-20T20:10:33.447782,,,top-1m,False,True
+open.spotify.com,Spotify Web Player,1553112633858961,2019-03-20T20:10:33.858961,,,top-1m,False,True
+accounts.spotify.com,Spotify,1513152947653589,2017-12-13T08:15:47.653589,,,top-1m,False,True
+accounts.spotify.com,Spotify,1513152947888327,2017-12-13T08:15:47.888327,,,top-1m,False,True
+accounts.spotify.com,Login - Spotify,1513152947935724,2017-12-13T08:15:47.935724,,,top-1m,False,True
+open.spotify.com,Browse - Featured,1553112646504752,2019-03-20T20:10:46.504752,,,top-1m,False,True
+twitter.com,"Open Data Kanton ZH on Twitter: ""Gleich geht es los: Medienkonferenz des @GISZentrumZH «Open Government Data: Kantonale Geodaten kostenlos und ohne Einschränkung verfügbar»… https://t.co/0FAt94gc3o""",1513154779582308,2017-12-13T08:46:19.582308,“Gleich geht es los: Medienkonferenz des @GISZentrumZH «Open Government Data: Kantonale Geodaten kostenlos und ohne Einschränkung verfügbar» Livestream unter https://t.co/ySjsKtBGXv  #ogd #geodaten”,https://pbs.twimg.com/profile_images/420188952151076864/CdfisCTh_400x400.png,top-1m,False,True
+blog.datalets.ch,,1513154818979384,2017-12-13T08:46:58.979384,,,top-1m,False,True
+blog.datalets.ch,Ghost Admin,1551686244871196,2019-03-04T07:57:24.871196,,,top-1m,False,True
+blog.datalets.ch,Sign In - define:soda,1551686258071905,2019-03-04T07:57:38.071905,,,top-1m,False,True
+id.atlassian.com,,1513155391573794,2017-12-13T08:56:31.573794,,,top-1m,False,True
+id.atlassian.com,,1513155391706280,2017-12-13T08:56:31.706280,,,top-1m,False,True
+id.atlassian.com,Log in to continue - Log in with Atlassian account,1513155391851239,2017-12-13T08:56:31.851239,"Log in to Jira, Confluence, and all other Atlassian Cloud products here. Not an Atlassian user? Sign up for free.",,top-1m,False,True
+id.atlassian.com,Log in to continue - Log in with Atlassian account,1513155395401225,2017-12-13T08:56:35.401225,,,top-1m,False,True
+id.atlassian.com,,1513155398812753,2017-12-13T08:56:38.812753,,,top-1m,False,True
+id.atlassian.com,Account settings - Atlassian account,1513155546971122,2017-12-13T08:59:06.971122,,,top-1m,False,True
+id.atlassian.com,Account settings - Atlassian account,1513155410013825,2017-12-13T08:56:50.013825,,,top-1m,False,True
+id.atlassian.com,Account settings - Atlassian account,1513155413185434,2017-12-13T08:56:53.185434,,,top-1m,False,True
 bitbucket.org,loleg / Synopses App — Bitbucket,1513155579247724,2017-12-13T08:59:39.247724,"Medical professionals are asking for fast, searchable, context-aware
 visibility into health profiles, while patients like us wish to better understand medical knowledge, and share it in confidence. We are a startup that develops platforms for personal access to medical history and doctor-patient communication connected to open health data sources.
 
-This is a PROTOTYPE - not production-ready - mobile frontend for the Synopses electronic patient file project, optimised for Android tablets, based on Polymer Framework.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,,True,False
-bitbucket.org,Bitbucket,1552393816648786,2019-03-12T12:30:16.648786,"Bitbucket is a Git and Mercurial based source code management and collaboration solution in the cloud. Bitbucket is simple and powerful, enables code collaboration for teams, works with the tools that matter, and is easy to use even for teams new to Git and Mercurial",,,True,False
-bitbucket.org,Reset Your Password,1513155518263580,2017-12-13T08:58:38.263580,"Bitbucket is the Git solution for professional teams. Collaborate on code with inline comments and pull requests. Manage and share your Git repositories to build and ship software, as a team.",,,True,False
-id.atlassian.com,Can't log in? - Log in with Atlassian account,1513155524352889,2017-12-13T08:58:44.352889,"Log in to Jira, Confluence, and all other Atlassian Cloud products here. Not an Atlassian user? Sign up for free.",,,True,False
-bitbucket.org,Problem loading page,1513155490841967,2017-12-13T08:58:10.841967,,,,True,False
-bitbucket.org,Bitbucket,1513155499068831,2017-12-13T08:58:19.068831,,,,True,False
-id.atlassian.com,Account settings - Atlassian account,1513155508423981,2017-12-13T08:58:28.423981,,,,True,False
-id.atlassian.com,Can't log in? - Log in with Atlassian account,1513155528481794,2017-12-13T08:58:48.481794,"Log in to Jira, Confluence, and all other Atlassian Cloud products here. Not an Atlassian user? Sign up for free.",,,True,False
-id.atlassian.com,,1513155541911670,2017-12-13T08:59:01.911670,,,,True,False
-id.atlassian.com,,1513155556728419,2017-12-13T08:59:16.728419,,,,True,False
-bitbucket.org,OpenID transaction in progress,1513155563888703,2017-12-13T08:59:23.888703,,,,True,False
-bitbucket.org,Bitbucket,1553148194847587,2019-03-21T06:03:14.847587,,,,True,False
-bitbucket.org,loleg / public-health-ch — Bitbucket,1513155573308183,2017-12-13T08:59:33.308183,Relocated to https://github.com/datalets/public-health-ch,https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/default.svg,,True,False
-bitbucket.org,loleg / Synopses App / Admin / Repository details — Bitbucket,1513155762112719,2017-12-13T09:02:42.112719,,,,True,False
+This is a PROTOTYPE - not production-ready - mobile frontend for the Synopses electronic patient file project, optimised for Android tablets, based on Polymer Framework.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,top-1m,False,True
+bitbucket.org,Bitbucket,1552393816648786,2019-03-12T12:30:16.648786,"Bitbucket is a Git and Mercurial based source code management and collaboration solution in the cloud. Bitbucket is simple and powerful, enables code collaboration for teams, works with the tools that matter, and is easy to use even for teams new to Git and Mercurial",,top-1m,False,True
+bitbucket.org,Reset Your Password,1513155518263580,2017-12-13T08:58:38.263580,"Bitbucket is the Git solution for professional teams. Collaborate on code with inline comments and pull requests. Manage and share your Git repositories to build and ship software, as a team.",,top-1m,False,True
+id.atlassian.com,Can't log in? - Log in with Atlassian account,1513155524352889,2017-12-13T08:58:44.352889,"Log in to Jira, Confluence, and all other Atlassian Cloud products here. Not an Atlassian user? Sign up for free.",,top-1m,False,True
+bitbucket.org,Problem loading page,1513155490841967,2017-12-13T08:58:10.841967,,,top-1m,False,True
+bitbucket.org,Bitbucket,1513155499068831,2017-12-13T08:58:19.068831,,,top-1m,False,True
+id.atlassian.com,Account settings - Atlassian account,1513155508423981,2017-12-13T08:58:28.423981,,,top-1m,False,True
+id.atlassian.com,Can't log in? - Log in with Atlassian account,1513155528481794,2017-12-13T08:58:48.481794,"Log in to Jira, Confluence, and all other Atlassian Cloud products here. Not an Atlassian user? Sign up for free.",,top-1m,False,True
+id.atlassian.com,,1513155541911670,2017-12-13T08:59:01.911670,,,top-1m,False,True
+id.atlassian.com,,1513155556728419,2017-12-13T08:59:16.728419,,,top-1m,False,True
+bitbucket.org,OpenID transaction in progress,1513155563888703,2017-12-13T08:59:23.888703,,,top-1m,False,True
+bitbucket.org,Bitbucket,1553148194847587,2019-03-21T06:03:14.847587,,,top-1m,False,True
+bitbucket.org,loleg / public-health-ch — Bitbucket,1513155573308183,2017-12-13T08:59:33.308183,Relocated to https://github.com/datalets/public-health-ch,https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/default.svg,top-1m,False,True
+bitbucket.org,loleg / Synopses App / Admin / Repository details — Bitbucket,1513155762112719,2017-12-13T09:02:42.112719,,,top-1m,False,True
 bitbucket.org,loleg / Synopses Base — Bitbucket,1513155826750648,2017-12-13T09:03:46.750648,"Medical professionals are asking for fast, searchable, context-aware
 visibility into health profiles, while patients like us wish to better understand medical knowledge, and share it in confidence. We are a startup that develops platforms for personal access to medical history and doctor-patient communication connected to open health data sources.
 
-This is a PROTOTYPE - not production-ready - backend for an electronic patient record management system, based on Python / Flask / SQLAlchemy.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/python.svg,,True,False
-bitbucket.org,loleg / Synopses Base / Admin / Repository details — Bitbucket,1513155831267019,2017-12-13T09:03:51.267019,,,,True,False
-bitbucket.org,loleg / Synopses Base — Bitbucket,1513155888914342,2017-12-13T09:04:48.914342,"PROTOTYPE backend for an electronic patient record management system, based on Python / Flask / SQLAlchemy.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/python.svg,,True,False
-bitbucket.org,loleg / Synopses App — Bitbucket,1513155893238610,2017-12-13T09:04:53.238610,"This is a PROTOTYPE - not production-ready - mobile frontend for the Synopses electronic patient file project, optimised for Android tablets, based on Polymer Framework.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,,True,False
-bitbucket.org,loleg / Synopses App / source / — Bitbucket,1513155777423280,2017-12-13T09:02:57.423280,,,,True,False
-bitbucket.org,loleg / Synopses App / Commits — Bitbucket,1513155704386603,2017-12-13T09:01:44.386603,,,,True,False
-bitbucket.org,loleg / Synopses App / Commits — Bitbucket,1513155705594353,2017-12-13T09:01:45.594353,,,,True,False
-bitbucket.org,loleg / Synopses App — Bitbucket,1513155822758671,2017-12-13T09:03:42.758671,"This is a PROTOTYPE - not production-ready - mobile frontend for the Synopses electronic patient file project, optimised for Android tablets, based on Polymer Framework.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,,True,False
-bitbucket.org,loleg / Synopses App / source / — Bitbucket,1513155780188411,2017-12-13T09:03:00.188411,,,,True,False
-bitbucket.org,loleg / Synopses App / source / README.md — Bitbucket,1513155780630648,2017-12-13T09:03:00.630648,,,,True,False
-bitbucket.org,loleg / Synopses App / commit / 06a1c1ae126b — Bitbucket,1513155815187650,2017-12-13T09:03:35.187650,README.md edited online with Bitbucket,https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,,True,False
-bitbucket.org,loleg / Synopses Base / source / — Bitbucket,1513155861520142,2017-12-13T09:04:21.520142,,,,True,False
-bitbucket.org,loleg / Synopses Base / source / — Bitbucket,1513155863990650,2017-12-13T09:04:23.990650,,,,True,False
-bitbucket.org,loleg / Synopses Base / source / README.md — Bitbucket,1513155864354587,2017-12-13T09:04:24.354587,,,,True,False
-bitbucket.org,loleg / Synopses Base / commit / 2cf88059a7bb — Bitbucket,1513155884308930,2017-12-13T09:04:44.308930,README.md edited online with Bitbucket,https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/python.svg,,True,False
-www.bfs.admin.ch,The value of unpaid work : Household production satellite account 2016,1513160588185390,2017-12-13T10:23:08.185390,,,,True,False
-www.bfs.admin.ch,Der Wert der unbezahlten Arbeit: Satellitenkonto Haushaltsproduktion 2016,1513160592568598,2017-12-13T10:23:12.568598,,,,True,False
-www.bfs.admin.ch,"Anteil der Bruttowertschöpfung der Haushalte an der erweiterten/modifizierten Gesamtwirtschaft - 1997, 2000, 2004, 2007, 2010, 2013, 2016 | Tabelle |",1513160596922066,2017-12-13T10:23:16.922066,,,,True,False
-www.bfs.admin.ch,Satellitenkonto Haushaltsproduktion (SHHP),1513160604914567,2017-12-13T10:23:24.914567,,,,True,False
-www.bfs.admin.ch,Volkswirtschaftliche Gesamtrechnung,1513160605853475,2017-12-13T10:23:25.853475,,,,True,False
-www.bfs.admin.ch,"Zeitvolumen für unbezahlte Arbeit - 1997, 2000, 2004, 2007, 2010, 2013, 2016 | Tabelle |",1513160620464965,2017-12-13T10:23:40.464965,,,,True,False
-www.meetup.com,,1513162128155021,2017-12-13T10:48:48.155021,,,,True,False
-www.meetup.com,,1513162128282095,2017-12-13T10:48:48.282095,,,,True,False
-www.meetup.com,"Meet. Make. Game! (Bern, Switzerland) | Meetup",1513162128760581,2017-12-13T10:48:48.760581,"This group purpose is to discuss and share on the creative process of games, stories and experience on all platform (PC, Console, Boardgame, Books...).We will discuss topics such as game design, story",https://secure.meetupstatic.com/photos/event/a/2/7/6/600_466541590.jpeg,,True,False
-e-0010.slack.com,,1513171689916220,2017-12-13T13:28:09.916220,,,,True,False
-slack.com,,1513171690265408,2017-12-13T13:28:10.265408,,,,True,False
-e-0010.slack.com,,1513171690929531,2017-12-13T13:28:10.929531,,,,True,False
+This is a PROTOTYPE - not production-ready - backend for an electronic patient record management system, based on Python / Flask / SQLAlchemy.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/python.svg,top-1m,False,True
+bitbucket.org,loleg / Synopses Base / Admin / Repository details — Bitbucket,1513155831267019,2017-12-13T09:03:51.267019,,,top-1m,False,True
+bitbucket.org,loleg / Synopses Base — Bitbucket,1513155888914342,2017-12-13T09:04:48.914342,"PROTOTYPE backend for an electronic patient record management system, based on Python / Flask / SQLAlchemy.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/python.svg,top-1m,False,True
+bitbucket.org,loleg / Synopses App — Bitbucket,1513155893238610,2017-12-13T09:04:53.238610,"This is a PROTOTYPE - not production-ready - mobile frontend for the Synopses electronic patient file project, optimised for Android tablets, based on Polymer Framework.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,top-1m,False,True
+bitbucket.org,loleg / Synopses App / source / — Bitbucket,1513155777423280,2017-12-13T09:02:57.423280,,,top-1m,False,True
+bitbucket.org,loleg / Synopses App / Commits — Bitbucket,1513155704386603,2017-12-13T09:01:44.386603,,,top-1m,False,True
+bitbucket.org,loleg / Synopses App / Commits — Bitbucket,1513155705594353,2017-12-13T09:01:45.594353,,,top-1m,False,True
+bitbucket.org,loleg / Synopses App — Bitbucket,1513155822758671,2017-12-13T09:03:42.758671,"This is a PROTOTYPE - not production-ready - mobile frontend for the Synopses electronic patient file project, optimised for Android tablets, based on Polymer Framework.",https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,top-1m,False,True
+bitbucket.org,loleg / Synopses App / source / — Bitbucket,1513155780188411,2017-12-13T09:03:00.188411,,,top-1m,False,True
+bitbucket.org,loleg / Synopses App / source / README.md — Bitbucket,1513155780630648,2017-12-13T09:03:00.630648,,,top-1m,False,True
+bitbucket.org,loleg / Synopses App / commit / 06a1c1ae126b — Bitbucket,1513155815187650,2017-12-13T09:03:35.187650,README.md edited online with Bitbucket,https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/js.svg,top-1m,False,True
+bitbucket.org,loleg / Synopses Base / source / — Bitbucket,1513155861520142,2017-12-13T09:04:21.520142,,,top-1m,False,True
+bitbucket.org,loleg / Synopses Base / source / — Bitbucket,1513155863990650,2017-12-13T09:04:23.990650,,,top-1m,False,True
+bitbucket.org,loleg / Synopses Base / source / README.md — Bitbucket,1513155864354587,2017-12-13T09:04:24.354587,,,top-1m,False,True
+bitbucket.org,loleg / Synopses Base / commit / 2cf88059a7bb — Bitbucket,1513155884308930,2017-12-13T09:04:44.308930,README.md edited online with Bitbucket,https://d301sr5gafysq2.cloudfront.net/8ba4c9d05a3f/img/repo-avatars/python.svg,top-1m,False,True
+www.bfs.admin.ch,The value of unpaid work : Household production satellite account 2016,1513160588185390,2017-12-13T10:23:08.185390,,,open,False,True
+www.bfs.admin.ch,Der Wert der unbezahlten Arbeit: Satellitenkonto Haushaltsproduktion 2016,1513160592568598,2017-12-13T10:23:12.568598,,,open,False,True
+www.bfs.admin.ch,"Anteil der Bruttowertschöpfung der Haushalte an der erweiterten/modifizierten Gesamtwirtschaft - 1997, 2000, 2004, 2007, 2010, 2013, 2016 | Tabelle |",1513160596922066,2017-12-13T10:23:16.922066,,,open,False,True
+www.bfs.admin.ch,Satellitenkonto Haushaltsproduktion (SHHP),1513160604914567,2017-12-13T10:23:24.914567,,,open,False,True
+www.bfs.admin.ch,Volkswirtschaftliche Gesamtrechnung,1513160605853475,2017-12-13T10:23:25.853475,,,open,False,True
+www.bfs.admin.ch,"Zeitvolumen für unbezahlte Arbeit - 1997, 2000, 2004, 2007, 2010, 2013, 2016 | Tabelle |",1513160620464965,2017-12-13T10:23:40.464965,,,open,False,True
+www.meetup.com,,1513162128155021,2017-12-13T10:48:48.155021,,,top-1m,False,True
+www.meetup.com,,1513162128282095,2017-12-13T10:48:48.282095,,,top-1m,False,True
+www.meetup.com,"Meet. Make. Game! (Bern, Switzerland) | Meetup",1513162128760581,2017-12-13T10:48:48.760581,"This group purpose is to discuss and share on the creative process of games, stories and experience on all platform (PC, Console, Boardgame, Books...).We will discuss topics such as game design, story",https://secure.meetupstatic.com/photos/event/a/2/7/6/600_466541590.jpeg,top-1m,False,True
+e-0010.slack.com,,1513171689916220,2017-12-13T13:28:09.916220,,,top-1m,False,True
+slack.com,,1513171690265408,2017-12-13T13:28:10.265408,,,top-1m,False,True
+e-0010.slack.com,,1513171690929531,2017-12-13T13:28:10.929531,,,top-1m,False,True

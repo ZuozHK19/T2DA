@@ -10,7 +10,26 @@ if len(sys.argv) < 2:
     exit()
 BASE_PATH = sys.argv[1]
 
+santaslist = {}
+def get_lists_in_dir(subfolder):
+    data = {}
+    for (dirpath, dirnames, filenames) in os.walk(subfolder):
+        for fn in filenames:
+            with open(os.path.join(dirpath, fn), newline='') as f:
+                title = fn.rstrip('.txt')
+                data[title] = [
+                    urlparse( x.strip() ).hostname or x.strip()
+                    for x in f.readlines()
+                ]
+                print("%d %s %s" % (len(data[title]), title, subfolder), file=sys.stderr)
+    return data
+
 def main():
+    print("Loading good lists ...", file=sys.stderr)
+    santaslist['good'] = get_lists_in_dir(os.path.join('sites', 'good'))
+    print("Loading ugly lists ...", file=sys.stderr)
+    santaslist['ugly'] = get_lists_in_dir(os.path.join('sites', 'ugly'))
+
     # Schema reader
     package = Package(
         os.path.join(BASE_PATH, 'datapackage.json'),
@@ -28,18 +47,19 @@ def main():
     col = []
     for h in headers: col.append(h)
 
-    print("Input: %r" % (col), file=sys.stderr)
-    print("Output: %r" % (fields), file=sys.stderr)
+    # print("Input: %r" % (col), file=sys.stderr)
+    # print("Output: %r" % (fields), file=sys.stderr)
     spamwriter.writerow(fields)
 
+    places = []
     rowcount = 0
     for r in reader:
         row = {}
         for i, h in enumerate(col): row[h] = r[i]
-        # print("Row: %r" % (row))
 
         place = get_place(row)
         if place is None: continue
+        places.append(place)
 
         spamwriter.writerow([place[f] for f in fields])
         rowcount = rowcount + 1
@@ -47,6 +67,9 @@ def main():
     if rowcount is 0:
         print("Uh-oh! Nothing to write home about.", file=sys.stderr)
     else:
+        c_risky    = sum(1 for p in places if p['is_risky'])
+        c_verified = sum(1 for p in places if p['is_verified'])
+        print("Verified: %d, Risky: %d" % (c_verified, c_risky), file=sys.stderr)
         print("Wrote %d rows. Have a nice day!" % rowcount, file=sys.stderr)
 
 def get_place(row):
@@ -68,15 +91,31 @@ def get_place(row):
         "datetime": datetimeiso8601 or '',
         "description": row['description'] or '',
         "image_url": row['preview_image_url'] or '',
-        "category": category,
-        "is_risky": str(is_risky),
-        "is_verified": str(is_verified),
+        "category": category or '',
+        "is_risky": is_risky,
+        "is_verified": is_verified,
     }
 
 def evaluate_domain(domain):
-    category = ''
-    is_risky = True
+    category = None
+    is_risky = False
     is_verified = False
+    for l in santaslist['good']:
+        # Include subdomains
+        for d in santaslist['good'][l]:
+            if domain.endswith(d):
+                # print("%r %r" % (domain, d), file=sys.stderr)
+                is_verified = True
+                category = l
+                break
+    if not is_verified:
+        for l in santaslist['ugly']:
+            # Exact matches
+            if domain in santaslist['ugly'][l]:
+                # print(domain, file=sys.stderr)
+                is_risky = True
+                category = l
+                break
     return category, is_risky, is_verified
 
 if __name__ == "__main__":
