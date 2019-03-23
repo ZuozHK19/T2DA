@@ -5,9 +5,6 @@ import fnmatch
 import configparser
 import platform
 
-
-test_mode = True    #when true use a local copy of the DB instead of the one used by firefox
-
 def get_path_linux():
     data_path = os.path.expanduser('~')+"/.mozilla/firefox"
     for file in os.listdir(data_path):
@@ -25,8 +22,9 @@ def get_path_windows():
     return data_path
 
 def get_path():
+    test_mode = os.path.isfile(os.path.join("private", 'places.sqlite'))
     if (test_mode):
-        return "private/";
+        return "private";
     else:
         if (platform.system() == "Windows"):
             data_path = get_path_windows()
@@ -57,6 +55,6 @@ def read_places_sqlite_and_create_csv():
     for url, count in results:
         out.write(url + "\t" + str(count) + "\n")
 
-#test_locating_and_reading_sql()
-
-read_places_sqlite_and_create_csv()
+if __name__ == "__main__":
+    #test_locating_and_reading_sql()
+    read_places_sqlite_and_create_csv()
