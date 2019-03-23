@@ -1,0 +1,13 @@
+digitallearninglab.ch
+opendata.ch
+admin.ch
+frictionlessdata.io
+datahub.io
+okfn.org
+wikipedia.org
+opensource.com
+fedoraproject.org
+freesound.org
+creativecommons.org
+politifact.com
+
