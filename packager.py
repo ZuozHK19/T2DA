@@ -3,12 +3,6 @@ from datetime import datetime
 from datapackage import Package
 from urllib.parse import urlparse
 
-spamwriter = csv.writer(sys.stdout)
-
-if len(sys.argv) < 2:
-    print("Path to Data Package required!", file=sys.stderr)
-    exit()
-BASE_PATH = sys.argv[1]
 
 santaslist = {}
 def get_lists_in_dir(subfolder):
@@ -24,45 +18,49 @@ def get_lists_in_dir(subfolder):
                 print("%d %s %s" % (len(data[title]), title, subfolder), file=sys.stderr)
     return data
 
-def main():
-    print("Loading good lists ...", file=sys.stderr)
-    santaslist['good'] = get_lists_in_dir(os.path.join('sites', 'good'))
-    print("Loading ugly lists ...", file=sys.stderr)
-    santaslist['ugly'] = get_lists_in_dir(os.path.join('sites', 'ugly'))
+def load_lists():
+        if 'good' in santaslist: return
+        # Load the filter lists
+        print("Loading good lists ...", file=sys.stderr)
+        santaslist['good'] = get_lists_in_dir(os.path.join('sites', 'good'))
+        print("Loading ugly lists ...", file=sys.stderr)
+        santaslist['ugly'] = get_lists_in_dir(os.path.join('sites', 'ugly'))
 
+def main():
+    if len(sys.argv) < 2:
+        print("Path to Data Package required!", file=sys.stderr)
+        exit()
+    BASE_PATH = sys.argv[1]
+    reader = csv.reader(sys.stdin)
+    spamwriter = csv.writer(sys.stdout)
+    package, fields, col = process(BASE_PATH, reader, spamwriter)
+    load_lists()
+    places = get_places(reader, col)
+    save_output(spamwriter, fields, places)
+
+def process(BASE_PATH, reader, spamwriter):
     # Schema reader
     package = Package(
         os.path.join(BASE_PATH, 'datapackage.json'),
         base_path=BASE_PATH
     )
+    schema = package.descriptor['resources'][0]['schema']
+    fields = [f['name'] for f in schema['fields']]
     print("Loaded Data Package %s v%s" %
         (package.descriptor['name'],
          package.descriptor['version']), file=sys.stderr)
 
-    schema = package.descriptor['resources'][0]['schema']
-    fields = [f['name'] for f in schema['fields']]
-
-    reader = csv.reader(sys.stdin)
+    # Get headers to start parsing CSV
     headers = next(reader, None)
     col = []
     for h in headers: col.append(h)
-
     # print("Input: %r" % (col), file=sys.stderr)
+
+    return package, fields, col
+
+def save_output(spamwriter, fields, places):
     # print("Output: %r" % (fields), file=sys.stderr)
-    spamwriter.writerow(fields)
-
-    places = []
-    rowcount = 0
-    for r in reader:
-        row = {}
-        for i, h in enumerate(col): row[h] = r[i]
-
-        place = get_place(row)
-        if place is None: continue
-        places.append(place)
-
-        spamwriter.writerow([place[f] for f in fields])
-        rowcount = rowcount + 1
+    rowcount = len(places)
 
     if rowcount is 0:
         print("Uh-oh! Nothing to write home about.", file=sys.stderr)
@@ -70,7 +68,24 @@ def main():
         c_risky    = sum(1 for p in places if p['is_risky'])
         c_verified = sum(1 for p in places if p['is_verified'])
         print("Verified: %d, Risky: %d" % (c_verified, c_risky), file=sys.stderr)
+
+        # Write the first row
+        spamwriter.writerow(fields)
+        for place in places:
+            spamwriter.writerow([place[f] for f in fields])
+
         print("Wrote %d rows. Have a nice day!" % rowcount, file=sys.stderr)
+
+def get_places(reader, col):
+    places = []
+    for r in reader:
+        row = {}
+        for i, h in enumerate(col): row[h] = r[i]
+        # Parse the incoming row
+        place = get_place(row)
+        if place is None: continue
+        places.append(place)
+    return places
 
 def get_place(row):
     # Conversions

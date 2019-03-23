@@ -2,12 +2,16 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
+from sqlreader import read_places_sqlite_and_create_csv
+
 class Handler:
     def onDestroy(self, *args):
         Gtk.main_quit()
 
     def on_GO_pressed(self, button):
-        print("Magic happens now");
+        print("Magic happens now...")
+        read_places_sqlite_and_create_csv()
+        print("CSV files created")
 
 
 builder = Gtk.Builder()
