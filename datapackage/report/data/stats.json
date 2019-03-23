@@ -8,13 +8,13 @@
   {"date": "Jul", "hits": 61, "type": 0},
   {"date": "Oct", "hits": 35, "type": 0},
   {"date": "Jan", "hits": 23, "type": 0},
-  {"date": "Jan", "hits": 28, "type": 1},
-  {"date": "Feb", "hits": 53, "type": 1},
-  {"date": "Mar", "hits": 12, "type": 1},
-  {"date": "Apr", "hits": 6, "type": 1},
-  {"date": "May", "hits": 26, "type": 1},
-  {"date": "Jun", "hits": 17, "type": 1},
-  {"date": "Jul", "hits": 61, "type": 1},
-  {"date": "Oct", "hits": 35, "type": 1},
-  {"date": "Jan", "hits": 23, "type": 1}
+  {"date": "Jan", "hits": 8, "type": 1},
+  {"date": "Feb", "hits": 5, "type": 1},
+  {"date": "Mar", "hits": 2, "type": 1},
+  {"date": "Apr", "hits": 8, "type": 1},
+  {"date": "May", "hits": 6, "type": 1},
+  {"date": "Jun", "hits": 14, "type": 1},
+  {"date": "Jul", "hits": 32, "type": 1},
+  {"date": "Oct", "hits": 33, "type": 1},
+  {"date": "Jan", "hits": 15, "type": 1}
 ]

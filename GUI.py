@@ -19,7 +19,10 @@ class Handler:
         webbrowser.open_new("./datapackage/report/t2da.html")
 
     def dialog_ok(self, button):
-        dialog.destroy()
+        global dialog
+        dialog.hide()
+        #dialog.destroy()
+        #dialog = builder.get_object("Firefox_Open")
     
     def save_data(self, button):
         BASE_PATH = 'datapackage'
