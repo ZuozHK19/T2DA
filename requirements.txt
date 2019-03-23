@@ -1,3 +1,5 @@
 configparser
 datapackage
 PyGObject
+webbrowser
+datetime
