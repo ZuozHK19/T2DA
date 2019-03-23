@@ -18,7 +18,7 @@ def get_lists_in_dir(subfolder):
             with open(os.path.join(dirpath, fn), newline='') as f:
                 title = fn.rstrip('.txt')
                 data[title] = [
-                    urlparse( x.strip() ).hostname or x.strip()
+                    (urlparse( x.strip() ).hostname or x.strip()).lower()
                     for x in f.readlines()
                 ]
                 print("%d %s %s" % (len(data[title]), title, subfolder), file=sys.stderr)
@@ -76,6 +76,7 @@ def get_place(row):
     # Conversions
     domain = urlparse(row['url']).hostname
     if not domain: return None
+    domain = domain.lower()
     datetimeiso8601 = ''
     if row['last_visit_date']:
         datetimeiso8601 = datetime.utcfromtimestamp(
