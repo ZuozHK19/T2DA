@@ -14,7 +14,7 @@ class Handler:
 
     def on_GO_pressed(self, button):
         start_analysis()
-        save_data()
+        make_output()
 
     def open_Report(self, button):
         print('Opening report')
@@ -27,27 +27,27 @@ class Handler:
         #dialog = builder.get_object("Firefox_Open")
 
     def save_data(self, button):
-        BASE_PATH = 'datapackage'
-        with open('private/websites.csv', 'r') as f:
-            reader = csv.reader(f)
-            package, fields, col = process(BASE_PATH, reader)
-            load_lists()
-            places = get_places(reader, col)
-        rowcount = len(places)
-        print(fields)
-        with open(BASE_PATH + "/data/places.csv", 'w') as csvfile:
-            spamwriter = csv.writer(csvfile)
-            save_output(spamwriter, fields, places)
-
-        summary = generate_summary(places)
-        with open(BASE_PATH + "/report/data/summary.json", 'w') as outfile:
-            json.dump(summary, outfile)
-
-        stats = generate_stats(places)
-        with open(BASE_PATH + "/report/data/stats.json", 'w') as outfile:
-            json.dump(stats, outfile)
+        make_output()
 
 
+def make_output():
+    BASE_PATH = 'datapackage'
+    with open('private/websites.csv', 'r') as f:
+        reader = csv.reader(f)
+        package, fields, col = process(BASE_PATH, reader)
+        load_lists()
+        places = get_places(reader, col)
+    with open(BASE_PATH + "/data/places.csv", 'w') as csvfile:
+        spamwriter = csv.writer(csvfile)
+        save_output(spamwriter, fields, places)
+
+    summary = generate_summary(places)
+    with open(BASE_PATH + "/report/data/summary.json", 'w') as outfile:
+        json.dump(summary, outfile)
+
+    stats = generate_stats(places)
+    with open(BASE_PATH + "/report/data/stats.json", 'w') as outfile:
+        json.dump(stats, outfile)
 
 def start_analysis():
     print("Magic happens now...")
