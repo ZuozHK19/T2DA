@@ -14,6 +14,7 @@ class Handler:
 
     def on_GO_pressed(self, button):
         start_analysis()
+        save_data()
 
     def open_Report(self, button):
         print('Opening report')
@@ -75,8 +76,8 @@ def start_analysis():
         else:
             c_risky    = summary['count']['risky']
             c_verified = summary['count']['verified']
-            t_min = summary['count']['daterange']['from']
-            t_max = summary['count']['daterange']['to']
+            t_min = summary['daterange']['from']
+            t_max = summary['daterange']['to']
             output = (
                 "From %r to %r\nYou visited %d Websites\nOf these %d are verified\nYou visited %d risky websites" %
                 (t_min, t_max, rowcount, c_verified, c_risky)
