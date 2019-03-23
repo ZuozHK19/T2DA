@@ -70,7 +70,7 @@ def main():
     package, fields, col = process(BASE_PATH, reader)
     load_lists()
     places = get_places(reader, col)
-    
+
     spamwriter = csv.writer(sys.stdout)
     save_output(spamwriter, fields, places)
 
@@ -131,6 +131,23 @@ def evaluate_domain(domain):
                 category = l
                 break
     return category, is_risky, is_verified
+
+def generate_summary(places):
+    daterange = [int(p['timestamp']) for p in places if p['timestamp'] != '']
+    return {
+      "today": datetime.now().strftime("%d.%m.%y"),
+      "count": {
+        "total":    len(places),
+        "risky":    sum(1 for p in places if p['is_risky']),
+        "verified": sum(1 for p in places if p['is_verified'])
+      },
+      "daterange": {
+        "from": datetime.utcfromtimestamp(min(daterange)/1000000).strftime("%d.%m.%y"),
+        "to":   datetime.utcfromtimestamp(max(daterange)/1000000).strftime("%d.%m.%y"),
+      },
+      "risky":    [p['domain'] for p in places if p['is_risky']],
+      "verified": [p['domain'] for p in places if p['is_verified']][0:10]
+    }
 
 if __name__ == "__main__":
     main()

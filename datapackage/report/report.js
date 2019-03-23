@@ -20,7 +20,6 @@ var reportSpec = {
       x: {
         field: 'class',
         type: 'nominal',
-        scale: { rangeStep: 12},
         axis: { title: ""}
       },
       y: {
