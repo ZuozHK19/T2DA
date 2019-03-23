@@ -17,10 +17,10 @@ def get_lists_in_dir(subfolder):
         for fn in filenames:
             with open(os.path.join(dirpath, fn), newline='') as f:
                 title = fn.rstrip('.txt')
-                data[title] = [
-                    (urlparse( x.strip() ).hostname or x.strip()).lower()
-                    for x in f.readlines()
-                ]
+                data[title] = []
+                for x in f.readlines():
+                    xl = (urlparse( x.strip() ).hostname or x.strip()).lower()
+                    if len(xl) > 1: data[title].append(xl)
                 print("%d %s %s" % (len(data[title]), title, subfolder), file=sys.stderr)
     return data
 
