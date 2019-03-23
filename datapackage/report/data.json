@@ -1,0 +1,22 @@
+{
+  "count": {
+    "total": 125,
+    "risky": 12,
+    "verified": 5151
+  },
+  "daterange": {
+    "from": "2018-02-01",
+    "to": "2019-02-01"
+  },
+  "risky": [
+    "naughtynaughty.com",
+    "iamnotyourbank.com",
+    "ohpleaseplease.com"
+  ],
+  "verified": [
+    "facebook.com",
+    "instagram.com",
+    "motomo.com"
+  ],
+  "stats": {}
+}
