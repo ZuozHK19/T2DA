@@ -26,19 +26,6 @@ def load_lists():
         print("Loading ugly lists ...", file=sys.stderr)
         santaslist['ugly'] = get_lists_in_dir(os.path.join('sites', 'ugly'))
 
-def main():
-    if len(sys.argv) < 2:
-        print("Path to Data Package required!", file=sys.stderr)
-        exit()
-    BASE_PATH = sys.argv[1]
-    reader = csv.reader(sys.stdin)
-    package, fields, col = process(BASE_PATH, reader)
-    load_lists()
-    places = get_places(reader, col)
-    
-    spamwriter = csv.writer(sys.stdout)
-    save_output(spamwriter, fields, places)
-
 def process(BASE_PATH, reader):
     # Schema reader
     package = Package(
@@ -66,9 +53,6 @@ def save_output(spamwriter, fields, places):
     if rowcount is 0:
         print("Uh-oh! Nothing to write home about.", file=sys.stderr)
     else:
-        c_risky    = sum(1 for p in places if p['is_risky'])
-        c_verified = sum(1 for p in places if p['is_verified'])
-        print("Verified: %d, Risky: %d" % (c_verified, c_risky), file=sys.stderr)
 
         # Write the first row
         spamwriter.writerow(fields)
@@ -76,6 +60,19 @@ def save_output(spamwriter, fields, places):
             spamwriter.writerow([place[f] for f in fields])
 
         print("Wrote %d rows. Have a nice day!" % rowcount, file=sys.stderr)
+
+def main():
+    if len(sys.argv) < 2:
+        print("Path to Data Package required!", file=sys.stderr)
+        exit()
+    BASE_PATH = sys.argv[1]
+    reader = csv.reader(sys.stdin)
+    package, fields, col = process(BASE_PATH, reader)
+    load_lists()
+    places = get_places(reader, col)
+    
+    spamwriter = csv.writer(sys.stdout)
+    save_output(spamwriter, fields, places)
 
 def get_places(reader, col):
     places = []

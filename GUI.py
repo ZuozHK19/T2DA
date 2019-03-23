@@ -3,9 +3,8 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 import webbrowser
 from sqlreader import read_places_sqlite_and_create_csv
-from packager import process, load_lists, get_places, csv
+from packager import process, load_lists, get_places, csv, datetime, save_output
 import sys
-from datetime import datetime
 
 class Handler:
     def exit(self, *args):
@@ -21,7 +20,20 @@ class Handler:
 
     def dialog_ok(self, button):
         dialog.destroy()
-        start_analysis()
+    
+    def save_data(self, button):
+        BASE_PATH = 'datapackage'
+        with open('private/websites.csv', 'r') as f:
+            reader = csv.reader(f)
+            package, fields, col = process(BASE_PATH, reader)
+            load_lists()
+            places = get_places(reader, col)
+        rowcount = len(places)
+        print(fields)
+        with open(BASE_PATH + "/data/places.csv", 'w') as csvfile:
+            spamwriter = csv.writer(csvfile)
+            save_output(spamwriter, fields, places)
+
 
 def start_analysis():
     print("Magic happens now...")
