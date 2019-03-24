@@ -14,8 +14,12 @@ def get_lists_in_dir(subfolder):
                 title = fn.rstrip('.txt')
                 data[title] = []
                 for x in f.readlines():
-                    xl = (urlparse( x.strip() ).hostname or x.strip()).lower()
-                    if len(xl) > 1: data[title].append(xl)
+                    xl = x.strip().lower()
+                    if len(xl) > 1:
+                        data[title].append(xl)
+                        xdom = urlparse(xl).hostname
+                        if xdom and len(xl) > len(xdom) + 8:
+                            data[title].append(xdom)
                 print("%d %s %s" % (len(data[title]), title, subfolder), file=sys.stderr)
     return data
 
@@ -98,15 +102,16 @@ def get_place(row):
     domain = urlparse(row['url']).hostname
     if not domain: return None
     domain = domain.lower()
+    category, is_risky, is_verified = evaluate(domain, row['url'])
+
     datetimeiso8601 = ''
     if row['last_visit_date']:
         datetimeiso8601 = get_date_from_stamp(
             row['last_visit_date']
         ).isoformat()
 
-    category, is_risky, is_verified = evaluate_domain(domain)
-
     return {
+        "url": row['url'],
         "domain": domain,
         "title": row['title'] or '',
         "timestamp": row['last_visit_date'] or '',
@@ -118,26 +123,26 @@ def get_place(row):
         "is_verified": is_verified,
     }
 
-def evaluate_domain(domain):
+def evaluate(domain, url):
     category = None
     is_risky = False
     is_verified = False
     for l in santaslist['good']:
-        # Include subdomains
-        for d in santaslist['good'][l]:
-            if domain.endswith(d):
-                # print("%r %r" % (domain, d), file=sys.stderr)
-                is_verified = True
-                category = l
-                break
+        if domain in santaslist['good'][l]:
+            # print("%r %r" % (domain, d), file=sys.stderr)
+            is_verified = True
+            category = l
+            break
+
+    # Innocent until proven guilty
     if not is_verified:
         for l in santaslist['ugly']:
-            # Exact matches
-            if domain in santaslist['ugly'][l]:
-                # print(domain, file=sys.stderr)
+            if url in santaslist['ugly'][l] or domain in santaslist['ugly'][l]:
+                # print(url, domain, file=sys.stderr)
                 is_risky = True
                 category = l
                 break
+
     return category, is_risky, is_verified
 
 def generate_summary(places):
