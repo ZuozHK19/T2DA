@@ -2,8 +2,10 @@ import csv, sys, os
 from datetime import datetime
 from datapackage import Package
 from urllib.parse import urlparse
+from random import shuffle
 
 santaslist = {}
+santascount = {}
 def get_lists_in_dir(subfolder):
     data = {}
     for (dirpath, dirnames, filenames) in os.walk(subfolder):
@@ -18,12 +20,14 @@ def get_lists_in_dir(subfolder):
     return data
 
 def load_lists():
-        if 'good' in santaslist: return
-        # Load the filter lists
-        print("Loading good lists ...", file=sys.stderr)
-        santaslist['good'] = get_lists_in_dir(os.path.join('sites', 'good'))
-        print("Loading ugly lists ...", file=sys.stderr)
-        santaslist['ugly'] = get_lists_in_dir(os.path.join('sites', 'ugly'))
+    if 'good' in santaslist: return
+    # Load the filter lists
+    santaslist['good'] = get_lists_in_dir(os.path.join('sites', 'good'))
+    santascount['good'] = sum([len(santaslist['good'][l]) for l in santaslist['good']])
+    print("Loaded %d from good lists." % santascount['good'], file=sys.stderr)
+    santaslist['ugly'] = get_lists_in_dir(os.path.join('sites', 'ugly'))
+    santascount['ugly'] = sum([len(santaslist['ugly'][l]) for l in santaslist['ugly']])
+    print("Loaded %d from ugly lists." % santascount['ugly'], file=sys.stderr)
 
 def process(BASE_PATH, reader):
     # Schema reader
@@ -138,6 +142,13 @@ def evaluate_domain(domain):
 
 def generate_summary(places):
     daterange = [int(p['timestamp']) for p in places if p['timestamp'] != '']
+    uglylist = [p['domain'] for p in places if p['is_risky']]
+    shuffle(uglylist)
+    uglylist = list(sorted(set(uglylist)))
+    goodlist = [p['domain'] for p in places if p['is_verified']]
+    shuffle(goodlist)
+    goodlist = list(sorted(set(goodlist)))
+
     return {
       "today": datetime.now().strftime("%d.%m.%y"),
       "count": {
@@ -145,12 +156,17 @@ def generate_summary(places):
         "risky":    sum(1 for p in places if p['is_risky']),
         "verified": sum(1 for p in places if p['is_verified'])
       },
+      "db": {
+        "total":    santascount['good'] + santascount['ugly'],
+        "risky":    santascount['ugly'],
+        "verified": santascount['good']
+      },
       "daterange": {
         "from": datetime.utcfromtimestamp(min(daterange)/1000000).strftime("%d.%m.%y"),
         "to":   datetime.utcfromtimestamp(max(daterange)/1000000).strftime("%d.%m.%y"),
       },
-      "risky":    [p['domain'] for p in places if p['is_risky']],
-      "verified": [p['domain'] for p in places if p['is_verified']][0:10]
+      "risky":    uglylist[0:10],
+      "verified": goodlist[0:10]
     }
 
 def generate_stats(places):
