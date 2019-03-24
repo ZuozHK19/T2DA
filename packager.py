@@ -18,7 +18,7 @@ def get_lists_in_dir(subfolder):
                     if len(xl) > 1:
                         data[title].append(xl)
                         xdom = urlparse(xl).hostname
-                        if xdom and len(xl) > len(xdom) + 8:
+                        if xdom and len(xl) > len(xdom) + 10:
                             data[title].append(xdom)
                 print("%d %s %s" % (len(data[title]), title, subfolder), file=sys.stderr)
     return data
@@ -147,14 +147,16 @@ def evaluate(domain, url):
 
 def generate_summary(places):
     MAX_RESULTS = 10
+
     uglylist = [p['domain'] for p in places if p['is_risky']]
     uglycount = len(uglylist)
-    uglylist = list(sorted(set(uglylist)))[0:MAX_RESULTS] # unique
+    shuffle(uglylist)
+    uglylist = list(sorted(set(uglylist[0:MAX_RESULTS]))) # unique
+
     goodlist = [p['domain'] for p in places if p['is_verified']]
     goodcount = len(goodlist)
-    goodlist = list(sorted(set(goodlist)))[0:MAX_RESULTS] # unique
-    # shuffle(goodlist)
-    # shuffle(uglylist)
+    shuffle(goodlist)
+    goodlist = list(sorted(set(goodlist[0:MAX_RESULTS]))) # unique
 
     daterange = [int(p['timestamp']) for p in places if p['timestamp'] != '']
 
