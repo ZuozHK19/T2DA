@@ -6,6 +6,7 @@ from sqlreader import read_places_sqlite_and_create_csv, test_locating_and_readi
 from packager import *
 import sys, time
 import json
+import threading
 
 class Handler:
     def exit(self, *args):
@@ -13,7 +14,7 @@ class Handler:
         Gtk.main_quit()
 
     def on_GO_pressed(self, button):
-        start_analysis()
+        threading.Thread(target=start_analysis).start()
 
     def open_Report(self, button):
         print('Opening report')
@@ -55,11 +56,13 @@ def make_output():
 
 def start_analysis():
     print("Magic happens now...")
+    gobutton.set_sensitive(False)
     label.set_text("")
 
     try:
         test_locating_and_reading_sql(False)
     except:
+        gobutton.set_sensitive(True)
         dialog.show()
         return
 
@@ -79,6 +82,7 @@ def start_analysis():
         label.set_text("No data available! Report was not generated.")
         print("Uh-oh! Nothing to write home about.")
     else:
+        make_output()
         c_risky    = summary['count']['risky']
         c_verified = summary['count']['verified']
         t_min = summary['daterange']['from']
@@ -89,7 +93,8 @@ def start_analysis():
         )
         print(output)
         label.set_text(output)
-        make_output()
+
+    gobutton.set_sensitive(True)
 
 builder = Gtk.Builder()
 builder.add_from_file("Test.glade")
@@ -98,4 +103,5 @@ window = builder.get_object("Window")
 window.show_all()
 dialog = builder.get_object("Firefox_Open")
 label = builder.get_object("Results")
+gobutton = builder.get_object("GO")
 Gtk.main()
