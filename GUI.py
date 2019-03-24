@@ -2,9 +2,9 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 import webbrowser
-from sqlreader import read_places_sqlite_and_create_csv
+from sqlreader import read_places_sqlite_and_create_csv, test_locating_and_reading_sql
 from packager import *
-import sys
+import sys, time
 import json
 
 class Handler:
@@ -14,7 +14,6 @@ class Handler:
 
     def on_GO_pressed(self, button):
         start_analysis()
-        make_output()
 
     def open_Report(self, button):
         print('Opening report')
@@ -56,39 +55,42 @@ def make_output():
 
 def start_analysis():
     print("Magic happens now...")
-    label.set_text("WORKING...")
-    run = True
+    label.set_text("")
+    time.sleep(1)
 
     try:
-        read_places_sqlite_and_create_csv()
-        print("CSV files created")
+        test_locating_and_reading_sql(False)
     except:
-        run = False
         dialog.show()
+        return
 
-    if (run):
-        BASE_PATH = 'datapackage'
-        with open('private/websites.csv', 'r') as f:
-            reader = csv.reader(f)
-            package, fields, col = process(BASE_PATH, reader)
-            load_lists()
-            places = get_places(reader, col)
+    read_places_sqlite_and_create_csv()
+    print("CSV files created")
 
-        summary = generate_summary(places)
-        rowcount = summary['count']['total']
-        if rowcount is 0:
-            print("Uh-oh! Nothing to write home about.")
-        else:
-            c_risky    = summary['count']['risky']
-            c_verified = summary['count']['verified']
-            t_min = summary['daterange']['from']
-            t_max = summary['daterange']['to']
-            output = (
-                "From %r to %r\nYou visited %d Websites\nOf these %d are verified\nYou visited %d risky websites" %
-                (t_min, t_max, rowcount, c_verified, c_risky)
-            )
-            print(output)
-            label.set_text(output)
+    BASE_PATH = 'datapackage'
+    with open('private/websites.csv', 'r') as f:
+        reader = csv.reader(f)
+        package, fields, col = process(BASE_PATH, reader)
+        load_lists()
+        places = get_places(reader, col)
+
+    summary = generate_summary(places)
+    rowcount = summary['count']['total']
+    if rowcount is 0:
+        label.set_text("No data available! Report was not generated.")
+        print("Uh-oh! Nothing to write home about.")
+    else:
+        c_risky    = summary['count']['risky']
+        c_verified = summary['count']['verified']
+        t_min = summary['daterange']['from']
+        t_max = summary['daterange']['to']
+        output = (
+            "From %r to %r\nYou visited %d Websites\nOf these %d are verified\nYou visited %d risky websites" %
+            (t_min, t_max, rowcount, c_verified, c_risky)
+        )
+        print(output)
+        label.set_text(output)
+        make_output()
 
 builder = Gtk.Builder()
 builder.add_from_file("Test.glade")

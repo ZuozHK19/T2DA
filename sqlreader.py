@@ -39,10 +39,11 @@ def open_history_db(data_path):
    cursor = c.cursor()
    return cursor
 
-def test_locating_and_reading_sql():
+def test_locating_and_reading_sql(and_print=True):
     cur = open_history_db(get_path())
     select_statement = "select moz_places.id, moz_places.url, moz_places.title, moz_places.rev_host, moz_places.visit_count, moz_places.hidden, moz_places.typed, moz_places.favicon_id, moz_places.frecency, moz_places.last_visit_date, moz_places.guid, moz_places.foreign_count, moz_places.url_hash, moz_places.description, moz_places.preview_image_url, moz_places.origin_id from moz_places;"
     cur.execute(select_statement)
+    if not and_print: return
     results = cur.fetchall()
     for url, count in results:
         print(url)
@@ -52,7 +53,10 @@ def read_places_sqlite_and_create_csv():
     select_statement = "select moz_places.id, moz_places.url, moz_places.title, moz_places.rev_host, moz_places.visit_count, moz_places.hidden, moz_places.typed, moz_places.favicon_id, moz_places.frecency, moz_places.last_visit_date, moz_places.guid, moz_places.foreign_count, moz_places.url_hash, moz_places.description, moz_places.preview_image_url, moz_places.origin_id from moz_places;"
     cur.execute(select_statement)
     results = cur.fetchall()
-    os.mkdir('private')
+    try:
+        os.mkdir('private')
+    except OSError as exc:
+        pass
     out = csv.writer(open(os.path.join("private", "websites.csv"),"w+"))
     out.writerow(['id','url','title','rev_host','visit_count','hidden','typed','favicon_id','frecency','last_visit_date','guid','foreign_count','url_hash','description','preview_image_url','origin_id'])
     for iD,url,title,rev_host,visit_count,hidden,typed,favicon_id,frecency,last_visit_date,guid,foreign_count,url_hash,description,preview_image_url,origin_id in results:

@@ -141,20 +141,24 @@ def evaluate_domain(domain):
     return category, is_risky, is_verified
 
 def generate_summary(places):
-    daterange = [int(p['timestamp']) for p in places if p['timestamp'] != '']
+    MAX_RESULTS = 10
     uglylist = [p['domain'] for p in places if p['is_risky']]
-    shuffle(uglylist)
-    # uglylist = list(sorted(set(uglylist)))
+    uglycount = len(uglylist)
+    uglylist = list(sorted(set(uglylist)))[0:MAX_RESULTS] # unique
     goodlist = [p['domain'] for p in places if p['is_verified']]
-    shuffle(goodlist)
-    # goodlist = list(sorted(set(goodlist)))
+    goodcount = len(goodlist)
+    goodlist = list(sorted(set(goodlist)))[0:MAX_RESULTS] # unique
+    # shuffle(goodlist)
+    # shuffle(uglylist)
+
+    daterange = [int(p['timestamp']) for p in places if p['timestamp'] != '']
 
     return {
       "today": datetime.now().strftime("%d.%m.%y"),
       "count": {
         "total":    len(places),
-        "risky":    sum(1 for p in places if p['is_risky']),
-        "verified": sum(1 for p in places if p['is_verified'])
+        "risky":    uglycount,
+        "verified": goodcount
       },
       "db": {
         "total":    santascount['good'] + santascount['ugly'],
@@ -165,8 +169,8 @@ def generate_summary(places):
         "from": datetime.utcfromtimestamp(min(daterange)/1000000).strftime("%d.%m.%y"),
         "to":   datetime.utcfromtimestamp(max(daterange)/1000000).strftime("%d.%m.%y"),
       },
-      "risky":    uglylist[0:10],
-      "verified": goodlist[0:10]
+      "risky":    uglylist,
+      "verified": goodlist
     }
 
 def generate_stats(places):
