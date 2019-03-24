@@ -11,7 +11,7 @@ var reportSpec = {
     // },
     data: { url: 'data/stats.json' },
     transform: [
-      { calculate: "datum.type == 1 ? 'Verified' : 'Risky'", "as": "class" },
+      { calculate: "datum.type == 1 ? 'Verified' : 'Caution'", "as": "class" },
       { calculate: "monthAbbrevFormat(datum.month - 1)", "as": "date" }
     ],
     spacing: 0,
