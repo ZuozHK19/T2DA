@@ -36,6 +36,7 @@ class Handler:
 
 def make_output():
     BASE_PATH = 'datapackage'
+    if not os.path.isfile('private/websites.csv'): return
     with open('private/websites.csv', 'r') as f:
         reader = csv.reader(f)
         package, fields, col = process(BASE_PATH, reader)
