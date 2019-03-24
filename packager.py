@@ -144,10 +144,10 @@ def generate_summary(places):
     daterange = [int(p['timestamp']) for p in places if p['timestamp'] != '']
     uglylist = [p['domain'] for p in places if p['is_risky']]
     shuffle(uglylist)
-    uglylist = list(sorted(set(uglylist)))
+    # uglylist = list(sorted(set(uglylist)))
     goodlist = [p['domain'] for p in places if p['is_verified']]
     shuffle(goodlist)
-    goodlist = list(sorted(set(goodlist)))
+    # goodlist = list(sorted(set(goodlist)))
 
     return {
       "today": datetime.now().strftime("%d.%m.%y"),

@@ -1,6 +1,5 @@
 datapackage/data/places.csv
-report/data/*.json
-
+datapackage/report/data/*.json
 
 *.swp
 /env
