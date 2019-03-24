@@ -56,7 +56,6 @@ def make_output():
 def start_analysis():
     print("Magic happens now...")
     label.set_text("")
-    time.sleep(1)
 
     try:
         test_locating_and_reading_sql(False)

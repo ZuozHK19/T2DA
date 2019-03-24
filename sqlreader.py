@@ -25,7 +25,7 @@ def get_path_windows():
 def get_path():
     test_mode = os.path.isfile(os.path.join("private", 'places.sqlite'))
     if (test_mode):
-        return "private";
+        return "private"
     else:
         if (platform.system() == "Windows"):
             data_path = get_path_windows()
