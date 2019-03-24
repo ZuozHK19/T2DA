@@ -52,7 +52,7 @@ def read_places_sqlite_and_create_csv():
     select_statement = "select moz_places.id, moz_places.url, moz_places.title, moz_places.rev_host, moz_places.visit_count, moz_places.hidden, moz_places.typed, moz_places.favicon_id, moz_places.frecency, moz_places.last_visit_date, moz_places.guid, moz_places.foreign_count, moz_places.url_hash, moz_places.description, moz_places.preview_image_url, moz_places.origin_id from moz_places;"
     cur.execute(select_statement)
     results = cur.fetchall()
-    out = csv.writer(open(os.path.join("private", "websites.csv"),"w"))#open(os.path.join("private", "websites.csv"), "w")
+    out = csv.writer(open(os.path.join("private", "websites.csv"),"w+"))
     out.writerow(['id','url','title','rev_host','visit_count','hidden','typed','favicon_id','frecency','last_visit_date','guid','foreign_count','url_hash','description','preview_image_url','origin_id'])
     for iD,url,title,rev_host,visit_count,hidden,typed,favicon_id,frecency,last_visit_date,guid,foreign_count,url_hash,description,preview_image_url,origin_id in results:
         out.writerow([iD,url,title,rev_host,visit_count,hidden,typed,favicon_id,frecency,last_visit_date,guid,foreign_count,url_hash,description,preview_image_url,origin_id])

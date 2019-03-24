@@ -41,16 +41,16 @@ def make_output():
         package, fields, col = process(BASE_PATH, reader)
         load_lists()
         places = get_places(reader, col)
-    with open(BASE_PATH + "/data/places.csv", 'w') as csvfile:
+    with open(BASE_PATH + "/data/places.csv", 'w+') as csvfile:
         spamwriter = csv.writer(csvfile)
         save_output(spamwriter, fields, places)
 
     summary = generate_summary(places)
-    with open(BASE_PATH + "/report/data/summary.json", 'w') as outfile:
+    with open(BASE_PATH + "/report/data/summary.json", 'w+') as outfile:
         json.dump(summary, outfile)
 
     stats = generate_stats(places)
-    with open(BASE_PATH + "/report/data/stats.json", 'w') as outfile:
+    with open(BASE_PATH + "/report/data/stats.json", 'w+') as outfile:
         json.dump(stats, outfile)
 
 def start_analysis():
