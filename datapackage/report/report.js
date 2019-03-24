@@ -52,6 +52,9 @@ $.ajax({
   success: function(data) {
     reportSpec.data.values = data;
     vegaEmbed('#vis', reportSpec);
+  },
+  error: function(jqXHR, ts, et) {
+    alert(et+'\nCould not load data: your browser may have reading local files disabled. Try Mozilla Firefox, or contact us for help.');
   }
 });
 

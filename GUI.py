@@ -20,6 +20,10 @@ class Handler:
         print('Opening report')
         webbrowser.open_new("./datapackage/report/t2da.html")
 
+    def contact_Dev(self, button):
+        print('Opening issues')
+        webbrowser.open_new("https://github.com/ZuozHK19/T2DA/issues/new")
+
     def dialog_ok(self, button):
         global dialog
         dialog.hide()

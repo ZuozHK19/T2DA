@@ -95,10 +95,11 @@
               <object class="GtkAccelLabel" id="Info">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">This application helps you learn something about your internet history.
-
-It analizes your History and lets you know the most important datapoints
-
+                <property name="label" translatable="yes">
+                  This application extracts your Internet history in order to help you learn about your browsing
+                  habits, and alert you to potential risks. It does not transmit your data anywhere. If you are
+                  concerned about privacy, delete the application folder when you are done using this app. Please
+                  contact the developers if you have any questions or feedback about this project.
 </property>
               </object>
               <packing>
@@ -133,7 +134,7 @@ It analizes your History and lets you know the most important datapoints
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">
-Press the green Button to start
+Press the checkmark above to start.
 Results will appear here!
 
 </property>
@@ -171,6 +172,20 @@ Results will appear here!
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <signal name="clicked" handler="open_Report" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">CONTACT US</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="contact_Dev" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
